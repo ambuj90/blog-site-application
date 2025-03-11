@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <title>Blog</title>
+    {% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  </head>
+  <body>
+    <h1>My Blog</h1>
+    {% for post in posts %}
+    <h2><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h2>
+    <p>{{ post.content|truncatewords:20 }}</p>
+    <p>{{ post.meta_title }}</p>
+    <p>{{ post.meta_description }}</p>
+    <p>{{ post.category }}</p>
+    <p>{{ post.subcategory }}</p>
+    <p>{{ post.tag }}</p>
+    {% endfor %}
+  </body>
+</html>
