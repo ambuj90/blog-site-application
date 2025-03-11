@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'blog',
     'bootstrap5',
+    'wayback_downloader',
 ]
 
 MIDDLEWARE = [
