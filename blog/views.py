@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import BlogPost
+from django.http import JsonResponse
 
 def home(request):
     posts = BlogPost.objects.all()
@@ -18,7 +19,8 @@ def test_detail(request, post_id):
     return render(request, "test_detail.html", {"post": post})
 
 
-
+def domain_analysis_view(request):
+    return JsonResponse({"message": "Domain analysis API is working."})
 
 
 

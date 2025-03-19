@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Products</title>
+    <style>
+      .product-grid {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .product-card {
+        width: 30%;
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+      }
+      .product-card img {
+        width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>All Products</h1>
+    <div class="product-grid">
+      {% for product in products %}
+      <div class="product-card">
+        {% if product.image %}
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" />
+        {% else %}
+        <img src="https://via.placeholder.com/200" alt="No Image Available" />
+        {% endif %}
+        <h2>{{ product.name }}</h2>
+      </div>
+      {% empty %}
+      <p>No products available.</p>
+      {% endfor %}
+    </div>
+  </body>
+</html>

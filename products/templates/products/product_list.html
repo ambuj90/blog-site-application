@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products in {{ category }}</title>
+  </head>
+  <body>
+    <h1>Products in Category: {{ category }}</h1>
+    <ul>
+      {% for product in products %}
+      <li>
+        <img src="{{ product.image.url }}" alt="{{ product.name }}" />
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.description }}</p>
+        <strong>Price: ${{ product.price }}</strong>
+      </li>
+      {% empty %}
+      <p>No products found in this category.</p>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

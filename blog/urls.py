@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import home, post_detail,testing
+from .views import home, post_detail, testing  # ✅ Removed domain_analysis_view
 
 urlpatterns = [
     path("", home, name="home"),

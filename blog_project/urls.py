@@ -7,6 +7,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("blog.urls")),
     path("wayback/", include("wayback_downloader.urls")),
+    path("products/", include("products.urls")),  # ✅ Correct path inclusion
 ]
 
 # ✅ Serve media files during development

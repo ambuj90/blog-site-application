@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'blog',
     'bootstrap5',
     'wayback_downloader',
+    'products',
 ]
 
 MIDDLEWARE = [
@@ -125,6 +126,9 @@ import os
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+AHREFS_API_KEY = "edf1273786msh447b24e01dc3be7p10e389jsn0133ac6cf327"  # ✅ Store API Key securely
+
 
 
 # Default primary key field type

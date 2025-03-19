@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Domain Analysis</title>
+  </head>
+  <body>
+    <h1>Domain Change Detection</h1>
+    <button onclick="analyzeDomain()">Check Changes</button>
+    <p id="result"></p>
+
+    <script>
+      function analyzeDomain() {
+        let domain = prompt("Enter the domain to analyze:");
+        if (!domain) return;
+
+        fetch(`/analyze/?domain=${domain}`)
+          .then((response) => response.json())
+          .then((data) => {
+            document.getElementById("result").innerText = data.message;
+          })
+          .catch((error) => console.error("Error:", error));
+      }
+    </script>
+  </body>
+</html>

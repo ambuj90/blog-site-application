@@ -18,7 +18,7 @@ class BlogPost(models.Model):
 
 
     def __str__(self):
-        return self.title
+        return self.title   
 
     def get_tags_list(self):
         """Convert tags from comma-separated string to a list."""
